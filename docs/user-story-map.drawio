@@ -1,0 +1,217 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="domprozrachno-usm" name="Карта историй">
+    <mxGraphModel dx="2438" dy="1366" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="1520" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="canvas" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="" vertex="1">
+          <mxGeometry height="1520" width="3300" as="geometry" />
+        </mxCell>
+        <mxCell id="band-mvp" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#f8fafc;strokeColor=#e2e8f0;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="" vertex="1">
+          <mxGeometry height="300" width="3260" x="20" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="band-v11" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#f8fafc;strokeColor=#e2e8f0;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="" vertex="1">
+          <mxGeometry height="280" width="3260" x="20" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="band-v12" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#f8fafc;strokeColor=#e2e8f0;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="" vertex="1">
+          <mxGeometry height="280" width="3260" x="20" y="1125" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=none;fontColor=#172b4d;fontFamily=Arial;fontSize=28;spacing=10;fontStyle=1;align=left;" value="ДомПрозрачно  /  Карта пользовательских историй" vertex="1">
+          <mxGeometry height="45" width="2900" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="spine" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#eef2ff;strokeColor=#c7d2fe;fontColor=#172b4d;fontFamily=Arial;fontSize=17;spacing=10;align=left;" value="Путь MVP: подключиться → увидеть начисление → разобрать состав → проверить расходы → увидеть комиссию → тестовая оплата → проверенный статус и история" vertex="1">
+          <mxGeometry height="38" width="3200" x="30" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-role" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#cbd5e1;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="Роли и активности" vertex="1">
+          <mxGeometry height="32" width="250" x="30" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-task" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#cbd5e1;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="Пользовательские задачи" vertex="1">
+          <mxGeometry height="32" width="300" x="300" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-story" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#cbd5e1;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="Истории: ID + роль + название" vertex="1">
+          <mxGeometry height="32" width="300" x="620" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-release" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=none;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;" value="Слои вниз: MVP → v1.1 → v1.2" vertex="1">
+          <mxGeometry height="32" width="1800" x="950" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="roles-A1" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff8d9;strokeColor=#e1c65b;fontColor=#172b4d;fontFamily=Arial;fontSize=13;spacing=10;" value="Житель · Представитель УК/ТСЖ" vertex="1">
+          <mxGeometry height="36" width="424" x="180" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A1" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#d6b656;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="A1  Подключиться к дому" vertex="1">
+          <mxGeometry height="58" width="424" x="180" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T01" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T01&#xa;Подготовить доступ" vertex="1">
+          <mxGeometry height="70" width="204" x="180" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="T02" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T02&#xa;Подтвердить привязку" vertex="1">
+          <mxGeometry height="70" width="204" x="400" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="roles-A2" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff8d9;strokeColor=#e1c65b;fontColor=#172b4d;fontFamily=Arial;fontSize=13;spacing=10;" value="Житель · Бухгалтер" vertex="1">
+          <mxGeometry height="36" width="424" x="620" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A2" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#d6b656;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="A2  Проверить начисления" vertex="1">
+          <mxGeometry height="58" width="424" x="620" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T03" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T03&#xa;Опубликовать начисление" vertex="1">
+          <mxGeometry height="70" width="204" x="620" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="T04" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T04&#xa;Просмотреть состав" vertex="1">
+          <mxGeometry height="70" width="204" x="840" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="roles-A3" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff8d9;strokeColor=#e1c65b;fontColor=#172b4d;fontFamily=Arial;fontSize=13;spacing=10;" value="Житель · Представитель УК/ТСЖ" vertex="1">
+          <mxGeometry height="36" width="424" x="1060" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A3" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#d6b656;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="A3  Изучить расходы" vertex="1">
+          <mxGeometry height="58" width="424" x="1060" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T05" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T05&#xa;Опубликовать отчёт" vertex="1">
+          <mxGeometry height="70" width="204" x="1060" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="T06" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T06&#xa;Проверить расходы" vertex="1">
+          <mxGeometry height="70" width="204" x="1280" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="roles-A4" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff8d9;strokeColor=#e1c65b;fontColor=#172b4d;fontFamily=Arial;fontSize=13;spacing=10;" value="Житель · Бухгалтер (v1.1)" vertex="1">
+          <mxGeometry height="36" width="424" x="1500" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A4" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#d6b656;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="A4  Оплатить и проверить результат" vertex="1">
+          <mxGeometry height="58" width="424" x="1500" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T07" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T07&#xa;Проверить сумму оплаты" vertex="1">
+          <mxGeometry height="70" width="204" x="1500" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="T08" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T08&#xa;Оплатить и сверить" vertex="1">
+          <mxGeometry height="70" width="204" x="1720" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="roles-A5" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff8d9;strokeColor=#e1c65b;fontColor=#172b4d;fontFamily=Arial;fontSize=13;spacing=10;" value="Житель · Бухгалтер" vertex="1">
+          <mxGeometry height="36" width="424" x="1940" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A5" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#d6b656;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="A5  Передать показания" vertex="1">
+          <mxGeometry height="58" width="424" x="1940" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T09" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T09&#xa;Передать значение" vertex="1">
+          <mxGeometry height="70" width="204" x="1940" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="T10" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T10&#xa;Принять показания" vertex="1">
+          <mxGeometry height="70" width="204" x="2160" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="roles-A6" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff8d9;strokeColor=#e1c65b;fontColor=#172b4d;fontFamily=Arial;fontSize=13;spacing=10;" value="Житель · Представитель УК/ТСЖ" vertex="1">
+          <mxGeometry height="36" width="424" x="2380" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A6" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#d6b656;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="A6  Связаться с УК/ТСЖ" vertex="1">
+          <mxGeometry height="58" width="424" x="2380" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T11" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T11&#xa;Вести обращение" vertex="1">
+          <mxGeometry height="70" width="204" x="2380" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="T12" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T12&#xa;Получать новости" vertex="1">
+          <mxGeometry height="70" width="204" x="2600" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="roles-A7" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff8d9;strokeColor=#e1c65b;fontColor=#172b4d;fontFamily=Arial;fontSize=13;spacing=10;" value="Житель · Представитель УК/ТСЖ" vertex="1">
+          <mxGeometry height="36" width="424" x="2820" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A7" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fff2b3;strokeColor=#d6b656;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="A7  Участвовать в жизни дома" vertex="1">
+          <mxGeometry height="58" width="424" x="2820" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T13" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T13&#xa;Общаться с соседями" vertex="1">
+          <mxGeometry height="70" width="204" x="2820" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="T14" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#d5e8c0;strokeColor=#82a65a;fontColor=#172b4d;fontFamily=Arial;fontSize=15;spacing=10;" value="T14&#xa;Обсудить решение" vertex="1">
+          <mxGeometry height="70" width="204" x="3040" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="label-mvp" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#e0e7ff;strokeColor=#a5b4fc;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="MVP&#xa;Must&#xa;US-01–10" vertex="1">
+          <mxGeometry height="100" width="130" x="30" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="label-v11" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#f1f5f9;strokeColor=#cbd5e1;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="v1.1&#xa;Should" vertex="1">
+          <mxGeometry height="90" width="130" x="30" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="label-v12" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#f1f5f9;strokeColor=#cbd5e1;fontColor=#172b4d;fontFamily=Arial;fontSize=18;spacing=10;fontStyle=1;" value="v1.2&#xa;Could" vertex="1">
+          <mxGeometry height="90" width="130" x="30" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="US-01" data-release="MVP" data-story="Как представитель УК/ТСЖ, я хочу подготовить учебный дом, лицевой счёт и одноразовое приглашение, чтобы выдать доступ только нужному жителю." data-task="T01" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-01 · MVP&#xa;Представитель УК/ТСЖ&#xa;Доступ к дому и счёту" vertex="1">
+          <mxGeometry height="120" width="204" x="180" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-02" data-release="MVP" data-story="Как житель, я хочу войти и подтвердить привязку к счёту по приглашению, чтобы видеть сведения своего дома и квартиры." data-task="T02" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-02 · MVP&#xa;Житель&#xa;Подтверждённая привязка" vertex="1">
+          <mxGeometry height="120" width="204" x="400" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-03" data-release="MVP" data-story="Как бухгалтер, я хочу опубликовать подготовленное начисление с периодом и строками, чтобы житель получил единую проверяемую сумму." data-task="T03" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-03 · MVP&#xa;Бухгалтер&#xa;Публикация начисления" vertex="1">
+          <mxGeometry height="120" width="204" x="620" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-04" data-release="MVP" data-story="Как житель, я хочу видеть опубликованное начисление и неоплаченную сумму за выбранный период, чтобы понять, что предстоит оплатить." data-task="T04" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-04 · MVP&#xa;Житель&#xa;Начисление за период" vertex="1">
+          <mxGeometry height="120" width="204" x="840" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-05" data-release="MVP" data-story="Как житель, я хочу открыть строки и основания начисления с итогом, чтобы проверить состав предъявленной суммы." data-task="T04" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-05 · MVP&#xa;Житель&#xa;Расшифровка суммы" vertex="1">
+          <mxGeometry height="120" width="204" x="840" y="582" as="geometry" />
+        </mxCell>
+        <mxCell id="US-06" data-release="MVP" data-story="Как представитель УК/ТСЖ, я хочу опубликовать расходы дома по категориям за период, чтобы жильцы могли проверить структуру расходов." data-task="T05" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-06 · MVP&#xa;Представитель УК/ТСЖ&#xa;Публикация расходов" vertex="1">
+          <mxGeometry height="120" width="204" x="1060" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-07" data-release="MVP" data-story="Как житель, я хочу выбрать период и увидеть категории и итог опубликованных расходов дома, чтобы понимать, на что потрачены средства дома." data-task="T06" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-07 · MVP&#xa;Житель&#xa;Категории расходов" vertex="1">
+          <mxGeometry height="120" width="204" x="1280" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-08" data-release="MVP" data-story="Как житель, я хочу видеть начисление, ставку и сумму комиссии и итог до согласия на оплату, чтобы принять решение без скрытых удержаний." data-task="T07" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-08 · MVP&#xa;Житель&#xa;Комиссия и итог" vertex="1">
+          <mxGeometry height="120" width="204" x="1500" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-09" data-release="MVP" data-story="Как житель, я хочу создать одну тестовую платёжную попытку через внешнего провайдера, чтобы проверить оплату без движения реальных денег." data-task="T08" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-09 · MVP&#xa;Житель&#xa;Тестовый платёж" vertex="1">
+          <mxGeometry height="120" width="204" x="1720" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="US-10" data-release="MVP" data-story="Как житель, я хочу видеть проверенный статус и историю своих платёжных попыток, чтобы понимать результат и не оплачивать повторно." data-task="T08" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-10 · MVP&#xa;Житель&#xa;Статус и история" vertex="1">
+          <mxGeometry height="120" width="204" x="1720" y="582" as="geometry" />
+        </mxCell>
+        <mxCell id="US-11" data-release="v1.1" data-story="Как представитель УК/ТСЖ, я хочу прикрепить к расходу документ, доступный жильцам дома, чтобы объяснить происхождение опубликованной суммы." data-task="T05" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-11 · v1.1&#xa;Представитель УК/ТСЖ&#xa;Подтверждающие документы" vertex="1">
+          <mxGeometry height="120" width="204" x="1060" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="US-12" data-release="v1.1" data-story="Как житель, я хочу скачать опубликованный отчёт за выбранный период, чтобы сохранить сведения для последующей проверки." data-task="T06" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-12 · v1.1&#xa;Житель&#xa;Выгрузка отчёта" vertex="1">
+          <mxGeometry height="120" width="204" x="1280" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="US-13" data-release="v1.1" data-story="Как житель, я хочу передать показания своего счётчика за период, чтобы обойтись без отдельной формы и звонка." data-task="T09" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-13 · v1.1&#xa;Житель&#xa;Передача показаний" vertex="1">
+          <mxGeometry height="120" width="204" x="1940" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="US-14" data-release="v1.1" data-story="Как бухгалтер, я хочу видеть и проверять переданные показания по счёту и периоду, чтобы подготовить исходные сведения для расчётов." data-task="T10" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-14 · v1.1&#xa;Бухгалтер&#xa;Приём показаний" vertex="1">
+          <mxGeometry height="120" width="204" x="2160" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="US-15" data-release="v1.1" data-story="Как житель, я хочу создать обращение по начислению или дому и видеть его статус, чтобы получить отслеживаемый ответ." data-task="T11" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-15 · v1.1&#xa;Житель&#xa;Обращение в УК/ТСЖ" vertex="1">
+          <mxGeometry height="120" width="204" x="2380" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="US-16" data-release="v1.1" data-story="Как представитель УК/ТСЖ, я хочу ответить на обращение и изменить его статус, чтобы довести решение вопроса до жителя." data-task="T11" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-16 · v1.1&#xa;Представитель УК/ТСЖ&#xa;Ответ на обращение" vertex="1">
+          <mxGeometry height="120" width="204" x="2380" y="932" as="geometry" />
+        </mxCell>
+        <mxCell id="US-17" data-release="v1.1" data-story="Как житель, я хочу получать уведомления об изменении платежа и новых публикациях дома, чтобы не проверять обновления вручную." data-task="T12" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-17 · v1.1&#xa;Житель&#xa;Уведомления" vertex="1">
+          <mxGeometry height="120" width="204" x="2600" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="US-18" data-release="v1.1" data-story="Как бухгалтер, я хочу видеть сводку подтверждённых и ожидающих платежей с идентификаторами, чтобы сверять сведения с начислениями." data-task="T08" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-18 · v1.1&#xa;Бухгалтер&#xa;Сводка платежей" vertex="1">
+          <mxGeometry height="120" width="204" x="1720" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="US-19" data-release="v1.2" data-story="Как житель, я хочу переключаться между подтверждёнными лицевыми счетами, чтобы управлять сведениями нескольких помещений." data-task="T02" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-19 · v1.2&#xa;Житель&#xa;Несколько лицевых счетов" vertex="1">
+          <mxGeometry height="120" width="204" x="400" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="US-20" data-release="v1.2" data-story="Как житель, я хочу сравнивать категории расходов за несколько периодов, чтобы замечать изменения и задавать предметные вопросы." data-task="T06" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-20 · v1.2&#xa;Житель&#xa;Динамика расходов" vertex="1">
+          <mxGeometry height="120" width="204" x="1280" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="US-21" data-release="v1.2" data-story="Как житель, я хочу обсуждать вопросы дома в чате подтверждённых жильцов, чтобы договариваться с соседями в одном месте." data-task="T13" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-21 · v1.2&#xa;Житель&#xa;Домовой чат" vertex="1">
+          <mxGeometry height="120" width="204" x="2820" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="US-22" data-release="v1.2" data-story="Как представитель УК/ТСЖ, я хочу модерировать сообщения по опубликованным правилам, чтобы сохранять полезное общение в чате дома." data-task="T13" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-22 · v1.2&#xa;Представитель УК/ТСЖ&#xa;Модерация чата" vertex="1">
+          <mxGeometry height="120" width="204" x="2820" y="1272" as="geometry" />
+        </mxCell>
+        <mxCell id="US-23" data-release="v1.2" data-story="Как представитель УК/ТСЖ, я хочу опубликовать консультативный опрос с темой и сроком, чтобы собрать мнение жильцов без подмены общего собрания." data-task="T14" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-23 · v1.2&#xa;Представитель УК/ТСЖ&#xa;Создание опроса" vertex="1">
+          <mxGeometry height="120" width="204" x="3040" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="US-24" data-release="v1.2" data-story="Как житель, я хочу однократно выразить мнение и увидеть итог консультативного опроса, чтобы участвовать в обсуждении решений по дому." data-task="T14" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dceeff;strokeColor=#78a6d2;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;align=left;verticalAlign=top;" value="US-24 · v1.2&#xa;Житель&#xa;Участие в опросе" vertex="1">
+          <mxGeometry height="120" width="204" x="3040" y="1272" as="geometry" />
+        </mxCell>
+        <mxCell id="mvp-boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#b45309;strokeColor=#b45309;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="" vertex="1">
+          <mxGeometry height="4" width="3260" x="20" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="mvp-boundary-text" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=none;fontColor=#172b4d;fontFamily=Arial;fontSize=12;spacing=10;align=left;fontStyle=1;fontColor=#92400e;" value="ГРАНИЦА MVP — ниже только последующие релизы" vertex="1">
+          <mxGeometry height="22" width="1800" x="30" y="762" as="geometry" />
+        </mxCell>
+        <mxCell id="v11-boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#b45309;strokeColor=#b45309;fontColor=#172b4d;fontFamily=Arial;fontSize=14;spacing=10;" value="" vertex="1">
+          <mxGeometry height="4" width="3260" x="20" y="1095" as="geometry" />
+        </mxCell>
+        <mxCell id="v11-boundary-text" parent="1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=none;fontColor=#172b4d;fontFamily=Arial;fontSize=12;spacing=10;align=left;fontStyle=1;fontColor=#92400e;" value="ГРАНИЦА v1.1 — ниже v1.2" vertex="1">
+          <mxGeometry height="22" width="1800" x="30" y="1102" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
