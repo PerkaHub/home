@@ -43,16 +43,28 @@ def check():
     for i in range(1,7):
         if f'FR-{i:02}' not in trace:
             errors.append(f'Missing trace FR-{i:02}')
-        for j in range(1,5):
+        for j in range(1, 7 if i == 5 else 5):
             if f'AC-{i:02}.{j}' not in requirements:
                 errors.append(f'Missing AC-{i:02}.{j}')
     for prefix, count in [('NFR',8),('BR',2)]:
         for i in range(1,count+1):
             if f'{prefix}-{i:02}' not in trace:
                 errors.append(f'Missing trace {prefix}-{i:02}')
-    for filename in ['domain/context-map.mmd','architecture/c4/context.mmd','architecture/c4/container.mmd','architecture/sequence/create-payment.mmd','architecture/data/model.mmd','api/resources.md','architecture/overview.md']:
+    for filename in ['domain/context-map.mmd','architecture/c4/context.mmd','architecture/c4/container.mmd','architecture/sequence/create-payment.mmd','architecture/data/model.mmd','api/resources.md','architecture/overview.md','templates/adr.md']:
         if not (ROOT/'docs'/filename).is_file():
             errors.append(f'Missing {filename}')
+    model = (ROOT/'docs/architecture/data/model.mmd').read_text(encoding='utf-8')
+    for relation in ['organisation |o--o{ users : employs', 'payment_attempt |o--o| charge : settles']:
+        if relation not in model:
+            errors.append(f'Missing ER relation: {relation}')
+    context = (ROOT/'docs/architecture/c4/context.mmd').read_text(encoding='utf-8')
+    container = (ROOT/'docs/architecture/c4/container.mmd').read_text(encoding='utf-8')
+    inside = container.split('subgraph SYS', 1)[-1].split('\n end', 1)[0]
+    if 'GitHub Actions' in context or 'J[' in inside or 'L[' in inside:
+        errors.append('Inconsistent C4 boundary')
+    for marker in ['## 11. Использование AI-инструментов', 'AC-05.5', 'AC-05.6', '40%', '300']:
+        if marker not in requirements:
+            errors.append(f'Missing review artifact: {marker}')
     return errors
 
 def self_test():

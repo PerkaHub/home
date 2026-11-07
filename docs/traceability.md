@@ -8,10 +8,10 @@
 | FR-02 | Must / P1–P3, истории US | Начисление опубликовано / Charge | 0003, 0002 | api/db; charge, charge_line | POST /v1/charges/{id}/publications | AC-02.1–4, ЛР 5 | — / спроектировано |
 | FR-03 | Must / P1–P3, истории US | Отчёт опубликован / ExpenseReport | 0003, 0002 | api/db; expense_report, expense_item | POST /v1/expense-reports/{id}/publications | AC-03.1–4, ЛР 5 | — / спроектировано |
 | FR-04 | Must / P1–P3, истории US | Условия оплаты рассчитаны / PaymentQuote | 0005, 0002 | api/db; payment_quote | POST /v1/charges/{id}/payment-quotes | AC-04.1–4, ЛР 5 | — / спроектировано |
-| FR-05 | Must / P1–P3, истории US | Платёж подтверждён / PaymentAttempt | 0005, 0002 | api/db; payment_attempt, payment_event, charge | POST /v1/payment-attempts; POST /v1/provider-events | AC-05.1–4, ЛР 5 | — / спроектировано |
+| FR-05 | Must / P1–P3, истории US | Платёж подтверждён / PaymentAttempt | 0005, 0002 | api/db; payment_attempt, payment_event, charge | POST /v1/payment-attempts; POST /v1/provider-events | AC-05.1–6, ЛР 5 | — / спроектировано |
 | FR-06 | Must / P1–P3, истории US | Чтение не создаёт событие / PaymentAttempt | 0004, 0002 | api/db; payment_attempt | GET /v1/accounts/{id}/payment-attempts | AC-06.1–4, ЛР 5 | — / спроектировано |
-| BR-01 | Should / Заказчик | — / сквозное | 0003 | web | — | 5 участников, 4 завершения | — / план |
-| BR-02 | Should / Заказчик | — / сквозное | 0003 | web | — | Медиана ≤120 с и ниже базы | — / план |
+| BR-01 | Should / Заказчик | — / сквозное | 0003 | web | — | Оценка 2/5 → цель 4/5 завершения | — / план |
+| BR-02 | Should / Заказчик | — / сквозное | 0003 | web | — | Оценка базы 300 с → цель ≤120 с | — / план |
 | NFR-01 | Should / P1 | — / сквозное | 0002/0005 | api/db | — | 20 RPS, p95 ≤500 мс | — / план |
 | NFR-02 | Must / P3 | — / сквозное | 0005 | api/worker/db | — | 100 параллельных повторов | — / план |
 | NFR-03 | Should / Эксплуатация | — / сквозное | 0003 | db | — | Восстановление dump ≤30 мин. | — / план |

@@ -123,7 +123,7 @@ erDiagram
   string csrf_hash
  }
  organisation ||--o{ house : manages
- organisation ||--o{ users : employs
+ organisation |o--o{ users : employs
  house ||--o{ account : contains
  account ||--o{ invitation : invites
  invitation ||--o| membership : confirms
@@ -141,3 +141,5 @@ erDiagram
  users ||--o{ payment_attempt : initiates
  payment_attempt ||--o{ payment_event : receives
  users ||--o{ session : authenticates
+
+ payment_attempt |o--o| charge : settles
