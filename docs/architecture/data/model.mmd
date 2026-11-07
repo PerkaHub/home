@@ -1,0 +1,143 @@
+erDiagram
+ organisation {
+  uuid id PK
+  timestamptz created_at
+  string name
+ }
+ house {
+  uuid id PK
+  timestamptz created_at
+  uuid organisation_id FK
+  string address
+ }
+ users {
+  uuid id PK
+  timestamptz created_at
+  uuid organisation_id FK
+  string login UK
+  string password_hash
+  string role
+ }
+ account {
+  uuid id PK
+  timestamptz created_at
+  uuid house_id FK
+  string number
+  boolean archived
+ }
+ invitation {
+  uuid id PK
+  timestamptz created_at
+  uuid account_id FK
+  string token_hash UK
+  timestamptz expires_at
+  timestamptz consumed_at
+ }
+ membership {
+  uuid id PK
+  timestamptz created_at
+  uuid invitation_id FK,UK
+  uuid user_id FK,UK
+  uuid account_id FK,UK
+ }
+ charge {
+  uuid id PK
+  timestamptz created_at
+  uuid account_id FK
+  string period
+  string status
+  bigint amount_minor
+  uuid settled_attempt_id FK,UK
+ }
+ charge_line {
+  uuid id PK
+  timestamptz created_at
+  uuid charge_id FK
+  string service
+  string basis
+  bigint amount_minor
+ }
+ expense_report {
+  uuid id PK
+  timestamptz created_at
+  uuid house_id FK
+  uuid author_id FK
+  string period
+  string status
+  timestamptz published_at
+  bigint total_minor
+ }
+ expense_item {
+  uuid id PK
+  timestamptz created_at
+  uuid report_id FK
+  string category
+  bigint amount_minor
+ }
+ payment_quote {
+  uuid id PK
+  timestamptz created_at
+  uuid charge_id FK
+  uuid user_id FK
+  bigint base_minor
+  int fee_basis_points
+  bigint fee_minor
+  bigint total_minor
+  string recipient
+  int terms_version
+  timestamptz expires_at
+ }
+ payment_attempt {
+  uuid id PK
+  timestamptz created_at
+  uuid charge_id FK
+  uuid quote_id FK
+  uuid user_id FK
+  string idempotency_key
+  string request_hash
+  string provider_id UK
+  string status
+  bigint base_minor
+  bigint fee_minor
+  bigint total_minor
+  string currency
+  string recipient
+  int terms_version
+  timestamptz updated_at
+ }
+ payment_event {
+  uuid id PK
+  timestamptz created_at
+  uuid attempt_id FK
+  string provider_event_id UK
+  string status
+  string payload_hash
+ }
+ session {
+  uuid id PK
+  timestamptz created_at
+  uuid user_id FK
+  string token_hash UK
+  timestamptz expires_at
+  timestamptz last_seen_at
+  string csrf_hash
+ }
+ organisation ||--o{ house : manages
+ organisation ||--o{ users : employs
+ house ||--o{ account : contains
+ account ||--o{ invitation : invites
+ invitation ||--o| membership : confirms
+ users ||--o| membership : owns
+ account ||--o| membership : grants
+ account ||--o{ charge : charged
+ charge ||--|{ charge_line : contains
+ house ||--o{ expense_report : reports
+ users ||--o{ expense_report : authors
+ expense_report ||--o{ expense_item : contains
+ charge ||--o{ payment_quote : quoted
+ users ||--o{ payment_quote : requests
+ charge ||--o{ payment_attempt : attempts
+ payment_quote ||--o{ payment_attempt : agreed
+ users ||--o{ payment_attempt : initiates
+ payment_attempt ||--o{ payment_event : receives
+ users ||--o{ session : authenticates

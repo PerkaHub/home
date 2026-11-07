@@ -1,0 +1,4 @@
+flowchart LR
+ A["Доступ: право на счёт и дом"] -->|"Customer/Supplier: account_id, house_id, разрешения"| B["Расчёты: начисления и платежи — основной"]
+ A -->|"Customer/Supplier: house_id, разрешения"| T["Прозрачность: расходы дома"]
+ P["Внешний тестовый провайдер"] -->|"Anti-Corruption Layer: проверенный статус"| B

@@ -1,0 +1,16 @@
+flowchart LR
+ subgraph SYS["ДомПрозрачно — модульный монолит"]
+ W["web — nginx 1.27.3, HTML/CSS/JS — ЛР 3: интерфейс и HTTPS proxy"]
+ A["api — Python 3.12 / FastAPI 0.115.6 — ЛР 3: access, billing, transparency"]
+ K["worker — Python 3.12 — ЛР 4: сверка pending раз в 60 с"]
+ D[("db — PostgreSQL 17.2 — ЛР 3/4: данные, сессии, ограничения")]
+ J["scheduler — Python 3.12 — ЛР 4: служебный запуск сверки"]
+ W -->|"HTTP внутри сети: /v1 и webhook"| A
+ A -->|"PostgreSQL wire/TCP: SQL и транзакции"| D
+ K -->|"PostgreSQL wire/TCP: pending и статусы"| D
+ J -->|"HTTP: служебный запрос с секретом"| A
+ end
+ P["Внешний sandbox — API контракта провайдера, версия уточняется до ЛР 4"]
+ A -->|"HTTPS JSON: создать платёж с merchant id"| P
+ K -->|"HTTPS JSON: сверить по merchant id"| P
+ P -->|"HTTPS JSON: webhook статуса"| W

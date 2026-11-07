@@ -1,0 +1,12 @@
+{
+  "name": "domprozrachno-docs",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "diagrams": "node scripts/render-diagrams.mjs",
+    "test:diagrams": "node scripts/test-diagram-rejection.mjs"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "11.4.2"
+  }
+}

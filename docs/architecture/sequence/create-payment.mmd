@@ -1,0 +1,35 @@
+sequenceDiagram
+ participant web
+ participant api
+ participant db
+ participant worker
+ participant provider
+ web->>api: POST /v1/payment-attempts, cookie, CSRF, Idempotency-Key
+ api->>db: Проверить сессию, Membership и quote
+ alt Нет доступа (AC-01.4)
+  api-->>web: 404
+ else Предложение истекло (AC-04.2)
+  api-->>web: 409, требуется новое согласие
+ else Разрешено
+  api->>db: BEGIN, блокировать Charge, проверить active/settled, INSERT attempt
+  alt Другая активная попытка (AC-05.2)
+   db-->>api: Конфликт ограничения, ROLLBACK
+   api-->>web: 409
+  else Создана
+   api->>db: COMMIT
+   api->>provider: HTTPS create, merchant id = attempt id
+   alt Тайм-аут (AC-05.3)
+    api->>db: Сохранить pending, не подтверждать отказ
+    api-->>web: 202, состояние pending
+    worker->>db: Выбрать pending
+    worker->>provider: HTTPS сверка по merchant id
+    provider-->>worker: Проверенные id, статус, сумма, RUB
+    worker->>db: BEGIN, lock Charge, применить результат один раз, COMMIT
+   else Ответ принят
+    provider-->>api: Внешний id и URL тестовой формы
+    api->>db: Сохранить id и URL, pending
+    api-->>web: 201, попытка и URL
+   end
+  end
+ end
+ Note over api,db: Webhook проходит те же проверки и транзакцию, что результат worker, browser return не подтверждает успех
