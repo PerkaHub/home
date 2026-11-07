@@ -1,6 +1,6 @@
 # Реестр ADR
 
-Все записи пока предложены; реального командного утверждения не было.
+Статус записей — «предложено». Согласование командой запланировано.
 
 - [0001-record-architecture-decisions](0001-record-architecture-decisions.md)
 - [0002-backend-language](0002-backend-language.md)
