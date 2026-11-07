@@ -12,6 +12,7 @@ jobs:
           python-version: '3.12'
       - run: python scripts/check_docs.py
       - run: python scripts/check_docs.py --self-test
+      - run: python scripts/check_payment_protocol.py
   diagrams:
     runs-on: ubuntu-latest
     steps:

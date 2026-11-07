@@ -1,6 +1,6 @@
 # Матрица прослеживаемости
 
-Матрица описывает проектные связи и план испытаний. Реализация и тесты относятся к следующим лабораторным; ADR находятся на согласовании.
+Матрица описывает проектные связи и план испытаний. Реализация и тесты относятся к следующим лабораторным; ADR-0001–0005 приняты для текущей спецификации.
 
 | Требование | Приоритет / источник | Событие / агрегат | ADR | Контейнер / таблицы | Операция | План проверки | Код / состояние |
 |---|---|---|---|---|---|---|---|
@@ -8,7 +8,7 @@
 | FR-02 | Must / P1–P3, истории US | Начисление опубликовано / Charge | 0003, 0002 | api/db; charge, charge_line | POST /v1/charges/{id}/publications | AC-02.1–4, ЛР 5 | — / спроектировано |
 | FR-03 | Must / P1–P3, истории US | Отчёт опубликован / ExpenseReport | 0003, 0002 | api/db; expense_report, expense_item | POST /v1/expense-reports/{id}/publications | AC-03.1–4, ЛР 5 | — / спроектировано |
 | FR-04 | Must / P1–P3, истории US | Условия оплаты рассчитаны / PaymentQuote | 0005, 0002 | api/db; payment_quote | POST /v1/charges/{id}/payment-quotes | AC-04.1–4, ЛР 5 | — / спроектировано |
-| FR-05 | Must / P1–P3, истории US | Платёж подтверждён / PaymentAttempt | 0005, 0002 | api/db; payment_attempt, payment_event, charge | POST /v1/payment-attempts; POST /v1/provider-events | AC-05.1–6, ЛР 5 | — / спроектировано |
+| FR-05 | Must / P1–P3, истории US | Платёж подтверждён / PaymentAttempt | 0005, 0002 | api/db; payment_attempt, payment_event, charge | POST /v1/payment-attempts; POST /v1/provider-events | AC-05.1–8, ЛР 5 | — / спроектировано |
 | FR-06 | Must / P1–P3, истории US | Чтение не создаёт событие / PaymentAttempt | 0004, 0002 | api/db; payment_attempt | GET /v1/accounts/{id}/payment-attempts | AC-06.1–4, ЛР 5 | — / спроектировано |
 | BR-01 | Should / Заказчик | — / сквозное | 0003 | web | — | Оценка 2/5 → цель 4/5 завершения | — / план |
 | BR-02 | Should / Заказчик | — / сквозное | 0003 | web | — | Оценка базы 300 с → цель ≤120 с | — / план |

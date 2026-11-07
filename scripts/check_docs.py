@@ -43,14 +43,14 @@ def check():
     for i in range(1,7):
         if f'FR-{i:02}' not in trace:
             errors.append(f'Missing trace FR-{i:02}')
-        for j in range(1, 7 if i == 5 else 5):
+        for j in range(1, 9 if i == 5 else 5):
             if f'AC-{i:02}.{j}' not in requirements:
                 errors.append(f'Missing AC-{i:02}.{j}')
     for prefix, count in [('NFR',8),('BR',2)]:
         for i in range(1,count+1):
             if f'{prefix}-{i:02}' not in trace:
                 errors.append(f'Missing trace {prefix}-{i:02}')
-    for filename in ['domain/context-map.mmd','architecture/c4/context.mmd','architecture/c4/container.mmd','architecture/sequence/create-payment.mmd','architecture/data/model.mmd','api/resources.md','architecture/overview.md','templates/adr.md']:
+    for filename in ['domain/context-map.mmd','architecture/c4/context.mmd','architecture/c4/container.mmd','architecture/sequence/create-payment.mmd','architecture/data/model.mmd','api/resources.md','architecture/overview.md','templates/adr.md','architecture/payment-recovery.md','domain/session-simulation.md','reviews/lab2-simulation.md','domain/event-board.mmd','exercises/container-candidate.mmd']:
         if not (ROOT/'docs'/filename).is_file():
             errors.append(f'Missing {filename}')
     model = (ROOT/'docs/architecture/data/model.mmd').read_text(encoding='utf-8')
@@ -65,6 +65,18 @@ def check():
     for marker in ['## 11. Использование AI-инструментов', 'AC-05.5', 'AC-05.6', '40%', '300']:
         if marker not in requirements:
             errors.append(f'Missing review artifact: {marker}')
+    process = (ROOT/'docs/process.md').read_text(encoding='utf-8')
+    for heading in ['### 2Б.', '### 2В.', '### 2Г.']:
+        if heading not in process:
+            errors.append(f'Missing AI exercise: {heading}')
+    api = (ROOT/'docs/api/resources.md').read_text(encoding='utf-8')
+    for marker in ['RFC 9457', 'application/problem+json', 'correlation_id']:
+        if marker not in api:
+            errors.append(f'Missing API error contract: {marker}')
+    sequence = (ROOT/'docs/architecture/sequence/create-payment.mmd').read_text(encoding='utf-8')
+    for marker in ['AC-05.7', 'AC-05.8', 'CAS', 'created и pending']:
+        if marker not in sequence:
+            errors.append(f'Missing recovery branch: {marker}')
     return errors
 
 def self_test():

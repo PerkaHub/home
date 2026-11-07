@@ -9,6 +9,7 @@
 ## Документы
 
 - [Требования и критерии](docs/requirements.md), [матрица](docs/traceability.md).
+- [Симуляционный разбор](docs/domain/session-simulation.md), [сценарное ревью](docs/reviews/lab2-simulation.md).
 - [Модель событий](docs/domain/event-storming.md), [агрегаты](docs/domain/aggregates.md), [глоссарий](docs/domain/ubiquitous-language.md).
 - [Обзор архитектуры](docs/architecture/overview.md), [диаграммы](docs/architecture/README.md), [ADR](docs/adr/README.md), [ресурсы API](docs/api/resources.md).
 - [Карта историй](docs/user-story-map.md), [путь жителя](docs/customer-journey-map.md), [план](docs/roadmap.md), [процесс](docs/process.md).
@@ -23,6 +24,7 @@ python scripts/check_docs.py
 npm ci
 npm run diagrams
 python scripts/check_docs.py --self-test
+python scripts/check_payment_protocol.py
 ```
 
 SVG создаются в build/diagrams и не включаются в Git. npm ci требует сеть при первой установке; Chromium загружается установщиком Puppeteer. CI выполняет те же проверки. Изменения — через небольшую ветку и содержательное ревью по [CONTRIBUTING](CONTRIBUTING.md).

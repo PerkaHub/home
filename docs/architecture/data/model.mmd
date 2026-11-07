@@ -95,6 +95,13 @@ erDiagram
   uuid user_id FK
   string idempotency_key
   string request_hash
+  jsonb provider_request
+  timestamptz next_attempt_at
+  timestamptz lease_until
+  uuid lease_token
+  int dispatch_attempts
+  boolean reconciliation_required
+  timestamptz replay_until
   string provider_id UK
   string status
   bigint base_minor

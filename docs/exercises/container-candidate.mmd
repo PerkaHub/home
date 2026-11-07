@@ -1,0 +1,15 @@
+flowchart LR
+ subgraph PRODUCT["ДомПрозрачно — черновик упражнения 2Г"]
+  W["web: nginx и статический клиент"] -->|"HTTP запросы"| A["api: FastAPI, три доменных модуля"]
+  A -->|"SQL/TCP"| D[("PostgreSQL")]
+  K["worker: сверка платежей"] -->|"SQL/TCP"| D
+ end
+ P["Внешний sandbox"]
+ J["Планировщик стенда"]
+ L["Сборщик журналов"]
+ A -->|"HTTPS create"| P
+ P -->|"HTTPS webhook"| W
+ K -->|"HTTPS merchant id"| P
+ J -->|"HTTPS запрос сверки"| A
+ A -->|"HTTPS журнал"| L
+ K -->|"HTTPS журнал"| L

@@ -4,32 +4,53 @@ sequenceDiagram
  participant db
  participant worker
  participant provider
- web->>api: POST /v1/payment-attempts, cookie, CSRF, Idempotency-Key
- api->>db: Проверить сессию, Membership и quote
- alt Нет доступа (AC-01.4)
+ web->>api: POST payment-attempts, quote, согласие, ключ
+ api->>db: Проверить сессию, доступ и срок quote
+ alt Нет доступа AC-01.4
   api-->>web: 404
- else Предложение истекло (AC-04.2)
-  api-->>web: 409, требуется новое согласие
- else Разрешено
-  api->>db: BEGIN, блокировать Charge, проверить active/settled, INSERT attempt
-  alt Другая активная попытка (AC-05.2)
-   db-->>api: Конфликт ограничения, ROLLBACK
-   api-->>web: 409
-  else Создана
-   api->>db: COMMIT
-   api->>provider: HTTPS create, merchant id = attempt id
-   alt Тайм-аут (AC-05.3)
-    api->>db: Сохранить pending, не подтверждать отказ
-    api-->>web: 202, состояние pending
-    worker->>db: Выбрать pending
-    worker->>provider: HTTPS сверка по merchant id
-    provider-->>worker: Проверенные id, статус, сумма, RUB
-    worker->>db: BEGIN, lock Charge, применить результат один раз, COMMIT
-   else Ответ принят
-    provider-->>api: Внешний id и URL тестовой формы
-    api->>db: Сохранить id и URL, pending
-    api-->>web: 201, попытка и URL
+ else Предложение истекло AC-04.2
+  api-->>web: 409
+ else Можно создать
+  api->>db: BEGIN, lock Charge, проверить active и settled
+  alt Активная попытка уже есть AC-05.2
+   api->>db: ROLLBACK
+   api-->>web: 409 или прежняя попытка для того же ключа
+  else Новая попытка
+   api->>db: INSERT created, снимок запроса, next_attempt_at, аренда 30 с, COMMIT
+   alt Сбой API после commit AC-05.7
+    Note over api,db: Поручение created остаётся в БД
+   else API продолжает отправку
+    api->>provider: create, merchant id и ключ = attempt_id
+    opt Webhook пришёл раньше ответа create AC-05.6
+     provider->>api: Подписанный итог, merchant id, сумма, RUB
+     api->>db: BEGIN, lock Charge и Attempt, один итоговый эффект, COMMIT
+    end
+    alt Ответ create получен
+     provider-->>api: provider_id и URL
+     api->>db: CAS статуса только created → pending, сохранить совместимые id и URL
+     db-->>api: Текущий статус, итог не понижен
+     api-->>web: 201 и фактический статус
+    else Тайм-аут AC-05.3
+     api->>db: CAS только created → pending, итог сохранить
+     db-->>api: Фактический статус после гонки
+     api-->>web: 202 для неопределённого исхода, иначе фактический итог
+    end
    end
   end
  end
- Note over api,db: Webhook проходит те же проверки и транзакцию, что результат worker, browser return не подтверждает успех
+ loop Worker каждые 60 с
+  worker->>db: Выбрать created и pending, next_attempt_at и аренда истекли
+  worker->>db: Короткая транзакция, новый lease_token, COMMIT
+  worker->>provider: Сверка merchant id
+  alt Операция найдена
+   provider-->>worker: Проверенные id, статус, сумма, RUB
+   worker->>db: BEGIN, lock Charge и Attempt, применить итог один раз, COMMIT
+  else Не найдена и безопасный повтор ещё разрешён
+   worker->>provider: create с тем же ключом и сохранённым снимком
+   provider-->>worker: Та же операция при повторе
+   worker->>db: Условное обновление из created, итог сохранить
+  else Недоступность или срок replay_until истёк AC-05.8
+   worker->>db: Запланировать сверку, без нового create после replay_until
+  end
+ end
+ Note over api,worker: Повтор идемпотентен, устаревшая аренда не снимает новую, browser return не подтверждает успех
