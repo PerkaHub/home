@@ -46,7 +46,7 @@ def check():
         for j in range(1, 9 if i == 5 else 5):
             if f'AC-{i:02}.{j}' not in requirements:
                 errors.append(f'Missing AC-{i:02}.{j}')
-    for prefix, count in [('NFR',8),('BR',2)]:
+    for prefix, count in [('NFR',10),('BR',2)]:
         for i in range(1,count+1):
             if f'{prefix}-{i:02}' not in trace:
                 errors.append(f'Missing trace {prefix}-{i:02}')
