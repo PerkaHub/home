@@ -5,6 +5,8 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException
 
+from .api.charges import ChargeStore
+from .api.charges import router as charges_router
 from .api.middleware import log_request
 from .api.problems import problem
 from .api.system import router as system_router
@@ -17,8 +19,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     configure_logging(settings.log_level)
     app = FastAPI(title="DomProzrachno", version=settings.app_version)
     app.state.settings = settings
+    app.state.charges = ChargeStore()
     app.middleware("http")(log_request)
     app.include_router(system_router)
+    app.include_router(charges_router)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, error: RequestValidationError) -> JSONResponse:
