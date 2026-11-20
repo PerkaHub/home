@@ -43,6 +43,24 @@ jobs:
       - run: uv run --locked mypy src tests
       - run: uv run --locked pytest --cov
 
+  boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/check_architecture.py boundaries --self-test
+
+  language:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/check_architecture.py language --self-test
+
   image:
     runs-on: ubuntu-latest
     needs: backend
