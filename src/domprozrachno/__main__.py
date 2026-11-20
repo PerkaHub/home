@@ -30,7 +30,7 @@ def main() -> int:
     structlog.get_logger("domprozrachno").info(
         "service_starting", port=settings.port, version=settings.app_version
     )
-    uvicorn.run(app, host="0.0.0.0", port=settings.port, access_log=False, log_config=None)
+    uvicorn.run(app, host=str(settings.host), port=settings.port, access_log=False, log_config=None)
     return 0
 
 

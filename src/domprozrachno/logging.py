@@ -12,7 +12,12 @@ def configure_logging(level: str) -> None:
         logger: Any, method: str, fields: structlog.typing.EventDict
     ) -> structlog.typing.EventDict:
         # Framework diagnostics can include raw exception text or request input.
-        return {"event": "server_message", "level": method}
+        return {
+            "_record": fields["_record"],
+            "_from_structlog": fields["_from_structlog"],
+            "event": "server_message",
+            "level": method,
+        }
 
     formatter = structlog.stdlib.ProcessorFormatter(
         foreign_pre_chain=[server_event, timestamper],

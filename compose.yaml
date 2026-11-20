@@ -1,9 +1,12 @@
 services:
   api:
-    build: .
+    build:
+      context: .
+      args:
+        APP_VERSION: ${APP_VERSION:-0.8.0}
     environment:
       APP_ENV: ${APP_ENV:-development}
-      APP_VERSION: ${APP_VERSION:-0.8.0}
+      HOST: 0.0.0.0
       PORT: ${PORT:-8080}
       LOG_LEVEL: ${LOG_LEVEL:-info}
       DATABASE_URL: ${DATABASE_URL:-postgresql://domprozrachno:local-only@db:5432/domprozrachno}

@@ -35,8 +35,9 @@ def test_valid_port_is_loaded_as_integer(monkeypatch: pytest.MonkeyPatch, port: 
         ("DATABASE_URL", "https://host", "url_scheme"),
         ("LOG_LEVEL", "loud", "literal_error"),
         ("APP_ENV", "staging", "literal_error"),
+        ("HOST", "local network", "ip_any_address"),
     ],
-    ids=["text-port", "zero-port", "large-port", "scheme", "log-level", "environment"],
+    ids=["text-port", "zero-port", "large-port", "scheme", "log-level", "environment", "host"],
 )
 def test_invalid_environment_values_fail(
     monkeypatch: pytest.MonkeyPatch, key: str, value: str, reason: str

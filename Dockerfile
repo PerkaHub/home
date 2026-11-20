@@ -12,7 +12,7 @@ RUN uv sync --locked --no-dev --no-editable \
     && useradd --system --user-group --no-create-home app
 
 ARG APP_VERSION=0.8.0
-ENV APP_VERSION=${APP_VERSION} APP_ENV=production PATH="/app/.venv/bin:$PATH"
+ENV APP_VERSION=${APP_VERSION} APP_ENV=production HOST=0.0.0.0 PATH="/app/.venv/bin:$PATH"
 USER app
 EXPOSE 8080
 CMD ["python", "-m", "domprozrachno"]
