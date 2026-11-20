@@ -71,7 +71,7 @@ jobs:
       - name: Smoke test the image
         run: |
           set -euo pipefail
-          curl -fsS --retry 10 --retry-connrefused http://127.0.0.1:8080/health |
+          curl -fsS --max-time 3 --retry 10 --retry-all-errors --retry-delay 1 http://127.0.0.1:8080/health |
             python -c 'import json, sys; assert json.load(sys.stdin) == {"status": "ok"}'
           curl -fsS http://127.0.0.1:8080/version |
             python -c 'import json, sys; result = json.load(sys.stdin); assert result["environment"] == "development" and result["version"]'
